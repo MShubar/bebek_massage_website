@@ -1,0 +1,253 @@
+/* General Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #e9f5ff; /* Light blue background */
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(
+    135deg,
+    #007bff,
+    #6f42c1
+  ); /* Blue to purple gradient */
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700; /* Gold color on hover */
+}
+
+/* Section Styling */
+section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center section */
+}
+
+/* Home Section */
+#home {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#home h2 {
+  color: #007bff; /* Bright blue color */
+}
+
+/* Catalog Section */
+#catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center book items */
+}
+
+.book-item {
+  background: #fff; /* White background for book items */
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px; /* Fixed width for consistency */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    135deg,
+    #e0f7fa,
+    #b2ebf2
+  ); /* Light gradient on hover */
+}
+
+.book-item h3 {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  color: #6f42c1; /* Purple color for book titles */
+}
+
+.book-item p {
+  margin: 5px 0;
+  color: #4a4a4a; /* Darker gray for author and price */
+}
+
+/* Contact Section */
+.contact-container {
+  background: #fff;
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto; /* Center contact form */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+textarea:focus {
+  border-color: #007bff; /* Change border color on focus */
+}
+
+textarea {
+  height: 120px; /* Adjust textarea height */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+  background-color: #28a745; /* Green button */
+  color: white;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Footer Styling */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.contact-container {
+  background: #fff;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto; /* Center the contact form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.cart-item {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin: 10px 0;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+#cart {
+  padding: 2em;
+}
+
+button {
+  background-color: #28a745; /* Change to green for "Add to Cart" */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #catalog {
+    flex-direction: column; /* Stack items on small screens */
+    align-items: center; /* Center align */
+  }
+
+  .book-item {
+    width: 90%; /* Full width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em; /* Adjust header font size */
+  }
+
+  nav a {
+    margin: 0 10px; /* Reduce margins on small screens */
+  }
+}

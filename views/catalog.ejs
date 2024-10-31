@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog - Book Comb</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Catalog</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/contact">Contact</a>
+        <a href="/cart">Cart (<%= cart.length %>)</a>
+      </nav>
+    </header>
+
+    <section id="catalog">
+      <h2>Our Collection</h2>
+      <div id="book-list">
+        <% books.forEach((book) => { %>
+        <div class="book-item">
+          <img src="<%= book.image %>" alt="<%= book.title %>" />
+          <h3><%= book.title %></h3>
+          <p><strong>Author:</strong> <%= book.author %></p>
+          <p><strong>Price:</strong> $<%= book.price.toFixed(2) %></p>
+          <p><%= book.description %></p>
+          <a href="/buy/<%= book.title.replace(/ /g, '-') %>">Buy Now</a>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Book Comb. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

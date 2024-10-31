@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Comb</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Book Comb</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/contact">Contact</a>
+        <a href="/cart">Cart (<%= cart.length %>)</a>
+      </nav>
+    </header>
+
+    <section id="home">
+      <h2>Discover Your Next Favorite Book</h2>
+      <p>Browse our collection of literature across all genres.</p>
+    </section>
+
+    <section id="catalog">
+      <h2>Book Catalog</h2>
+      <div id="book-list">
+        <% books.forEach((book) => { %>
+        <div class="book-item">
+          <h3><%= book.title %></h3>
+          <p>by <%= book.author %></p>
+          <p>Price: <%= book.price %></p>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>
+        Reach out to Book Comb at
+        <a href="mailto:info@bookcomb.shop">info@bookcomb.shop</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Book Comb. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

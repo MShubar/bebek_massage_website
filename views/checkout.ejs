@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Book Comb</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Checkout</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/contact">Contact</a>
+        <a href="/cart">Cart (<%= cart.length %>)</a>
+      </nav>
+    </header>
+
+    <section id="checkout">
+      <h2>Your Cart</h2>
+      <div id="book-list">
+        <% cart.forEach((book) => { %>
+        <div class="book-item">
+          <h3><%= book.title %></h3>
+          <p>Author: <%= book.author %></p>
+          <p>Price: $<%= book.price.toFixed(2) %></p>
+        </div>
+        <% }) %>
+      </div>
+
+      <h3>
+        Total: $<%= cart.reduce((total, book) => total + book.price,
+        0).toFixed(2) %>
+      </h3>
+
+      <form action="/submit-order" method="POST">
+        <h3>Shipping Information</h3>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required />
+
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
+  </body>
+</html>
